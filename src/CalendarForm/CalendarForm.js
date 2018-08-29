@@ -142,6 +142,12 @@ class CalendarForm extends Component{
         return [yy, mm, dd].join('-');
     }
 
+    // Function to submit appointments
+    submitAppointments = () => {
+        //Here is a fetch request !!
+        alert(JSON.stringify(this.state.appointments));
+    }
+
     render(){
         return (
             <div className="calendar-form-wrapper">
@@ -180,6 +186,9 @@ class CalendarForm extends Component{
                     </div>
                     <button type="submit">
                         Add Appointment
+                    </button>
+                    <button type="button" onClick={this.submitAppointments}>
+                        Submit All Appointments
                     </button>
                 </form>
                 <AppointmentList
